@@ -1,3 +1,19 @@
-#!/bin/bash
-kill -9 `ps ax | grep "$1" | awk '{print $1}'` &2>/dev/null
-echo "It has been done."
+#!/bin/sh
+
+if [ -z $@ ]; then
+  echo "What do you want to murder?"
+else
+  pgrep -af "$@" |
+  grep -v "$$"   |
+  xargs -I % sh -c "
+    kill -9 \$(
+      echo \$(echo % | awk '{print \$1}')
+    )
+    if [ \$? = 0 ]; then
+      echo \$(echo % | awk '{print \$1}') '\tkilled\t' \$(echo % | awk '{print \$2}')
+    else
+      echo \$(echo % | awk '{print \$1}') '\tsurvived\t' \$(echo % | awk '{print \$2}')
+    fi
+  " 2> /dev/null
+fi
+
