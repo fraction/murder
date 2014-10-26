@@ -8,9 +8,7 @@ The easiest way to kill that stupid service that you can't figure out how to end
 Download, add executable permissions, and move it into your path.
 
 ```sh
-curl -O https://raw.githubusercontent.com/christianbundy/murder/master/murder
-chmod +x murder
-mv murder /usr/local/bin/murder
+sudo curl -o /usr/local/bin/murder https://raw.githubusercontent.com/christianbundy/murder/master/murder
 ```
 
 ## Usage
