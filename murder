@@ -2,18 +2,20 @@
 
 if [ -z $@ ]; then
   echo "What do you want to murder?"
+  exit 1
 else
   pgrep -af "$@" |
   grep -v "$$"   |
   xargs -I % sh -c "
     kill -9 \$(
       echo \$(echo % | awk '{print \$1}')
-    )
+    ) ||
     if [ \$? = 0 ]; then
       echo \$(echo % | awk '{print \$1}') '\tkilled\t' \$(echo % | awk '{print \$2}')
     else
       echo \$(echo % | awk '{print \$1}') '\tsurvived\t' \$(echo % | awk '{print \$2}')
     fi
   " 2> /dev/null
+  exit 0
 fi
 
