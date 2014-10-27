@@ -5,7 +5,7 @@ The easiest way to kill that stupid service that you can't figure out how to end
 
 ## Installation
 
-Download, add executable permissions, and move it into your path.
+Download the executable into your path with a single command.
 
 ```sh
 sudo curl -o /usr/local/bin/murder https://raw.githubusercontent.com/christianbundy/murder/master/murder
