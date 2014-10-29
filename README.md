@@ -12,10 +12,11 @@ brew tap fraction/homebrew-formulae
 brew install murder
 ```
 
-Alternatively, download the executable into your path with a single command.
+Add the executable to your path and give it permissions.
 
 ```sh
 sudo curl -o /usr/local/bin/murder https://raw.githubusercontent.com/fraction/murder/master/murder
+sudo chmod +x /usr/local/bin/murder
 ```
 
 ## Usage
