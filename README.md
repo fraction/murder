@@ -15,7 +15,7 @@ brew install murder
 Add the executable to your path and give it permissions.
 
 ```sh
-sudo curl -o /usr/local/bin/murder https://raw.githubusercontent.com/fraction/murder/master/murder
+sudo curl -Lo /usr/local/bin/murder http://git.io/GFkGAw
 sudo chmod +x /usr/local/bin/murder
 ```
 
