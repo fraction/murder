@@ -7,7 +7,7 @@ else
   pgrep -af "$@" |
   grep -v "$$"   |
   xargs -I % sh -c "
-    kill -9 \$(
+    kill -KILL \$(
       echo \$(echo % | awk '{print \$1}')
     ) ||
     if [ \$? = 0 ]; then
